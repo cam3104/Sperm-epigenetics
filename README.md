@@ -1,2 +1,2 @@
 # Sperm-epigenetics
-BS_ChIP-seq
+•	Investigating the association between DMRs and histone modifications 
