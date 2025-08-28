@@ -67,7 +67,7 @@ def find_best_k(X, method, min_k, max_k, output_prefix):
     if method == "gmm":
         plt.figure(figsize=(6, 4))
         plt.plot(ks, bic_scores, marker='o')
-        plt.gca().invert_yaxis()  # Lower BIC is better
+        plt.gca().invert_yaxis() 
         plt.xlabel("K")
         plt.ylabel("BIC")
         plt.title("BIC Scores for GMM")
@@ -93,7 +93,6 @@ def main():
     df = pd.read_csv(args.input, sep="\t")
     ctx_cols = [col for col in df.columns if col not in args.target_cols]
     print(f"Input shape: {df.shape}, Target Columns: {args.target_cols}, Context Columns: {ctx_cols}")
-    # 🔽 NaN 값을 평균값으로 대체
     df[ctx_cols] = df[ctx_cols].fillna(df[ctx_cols].mean())
 
     X = df[ctx_cols].values
